@@ -280,6 +280,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 6503060649059055786}
+  allowCallPen: 1
 --- !u!114 &6503060649059055786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,11 +472,11 @@ MonoBehaviour:
   canUseInstanceOwner: 0
   canUseOwner: 0
   canUseMaster: 0
-  isGlobalEvent: 1
+  isGlobalEvent: 0
   onlySendToOwner: 0
   udonSharpBehaviour: {fileID: 7139783110247166082}
   udonSharpBehaviours: []
-  customEventName: Respawn
+  customEventName: _Respawn
 --- !u!114 &4553071239192869828
 MonoBehaviour:
   m_ObjectHideFlags: 0

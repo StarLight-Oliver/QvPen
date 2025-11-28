@@ -200,6 +200,12 @@ namespace QvPen.UdonScript
             SetClearButtonActive(true);
         }
 
+        public void _Respawn()
+        {
+           _TakeOwnership();
+           SendCustomNetworkEvent(NetworkEventTarget.All, nameof(QvPen_PenManager.Respawn));
+        }
+
         public void Clear()
         {
             _ClearSyncBuffer();

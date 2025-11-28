@@ -88,9 +88,18 @@ namespace QvPen.UdonScript
 
         public void ResetEraser() => eraser._Respawn();
 
-        public void Respawn() => eraser._Respawn();
+		public void Respawn()
+		{
+			eraser._Respawn();
+		}
 
         #region Network
+
+		public void _Respawn()
+        {
+           _TakeOwnership();
+		   SendCustomNetworkEvent(NetworkEventTarget.All, nameof(QvPen_PenManager.Respawn));
+        }
 
         public bool _TakeOwnership()
         {

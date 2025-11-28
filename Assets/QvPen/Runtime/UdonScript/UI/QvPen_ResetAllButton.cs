@@ -8,7 +8,7 @@ using VRC.Udon.Common.Interfaces;
 namespace QvPen.UdonScript.UI
 {
     [AddComponentMenu("")]
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class QvPen_ResetAllButton : UdonSharpBehaviour
     {
         [SerializeField]
@@ -83,13 +83,19 @@ namespace QvPen.UdonScript.UI
             if (!Networking.IsOwner(gameObject))
                 return;
 
+            SendCustomNetworkEvent(NetworkEventTarget.All, "Reset");
+        }
+
+        public void Reset()
+        {
+
             foreach (var penManager in settings.penManagers)
                 if (penManager)
-                    penManager.SendCustomNetworkEvent(NetworkEventTarget.All, nameof(QvPen_PenManager.ResetPen));
+                    penManager.ResetPen();
 
             foreach (var eraserManager in settings.eraserManagers)
                 if (eraserManager)
-                    eraserManager.SendCustomNetworkEvent(NetworkEventTarget.All, nameof(QvPen_EraserManager.ResetEraser));
+                    eraserManager.ResetEraser();
         }
     }
 }

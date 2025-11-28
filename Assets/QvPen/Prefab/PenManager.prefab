@@ -1626,6 +1626,8 @@ MonoBehaviour:
   screenOverlay: {fileID: 1748760958401312493}
   marker: {fileID: 1215216886343430990}
   canBeErasedWithOtherPointers: 1
+  _alternativeObjectSync: {fileID: 0}
+  _respawnEventName: Respawn
 --- !u!114 &4104359581830787428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2151,11 +2153,11 @@ MonoBehaviour:
   canUseInstanceOwner: 0
   canUseOwner: 0
   canUseMaster: 0
-  isGlobalEvent: 1
+  isGlobalEvent: 0
   onlySendToOwner: 0
   udonSharpBehaviour: {fileID: 5589752424300052349}
   udonSharpBehaviours: []
-  customEventName: Respawn
+  customEventName: _Respawn
 --- !u!114 &458223374407863770
 MonoBehaviour:
   m_ObjectHideFlags: 0
